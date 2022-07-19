@@ -3,10 +3,11 @@
 ## Correr el proyecto
 
 - sudo docker-compose build
-- sudo docker-compose run web python manage.py migrate
-- sudo docker-compose run web python manage.py createsuperuser
+- sudo chown -R $USER:$USER mvp manage.py
+- docker-compose run web python manage.py migrate
+- docker-compose run web python manage.py createsuperuser
   - Es el usuario y contraseña que usarás para acceder.
-- sudo docker-compose up
+- docker-compose up
 - Ir a localhost, hacer login y hacer cambios en las tasas.
 
 ## Documentación del código

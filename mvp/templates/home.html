@@ -1,0 +1,23 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tasa de cambio</title>
+  </head>
+  <body>
+    <h1>Puedes hacer cambios a las tasas y notificarme</h1>
+    {% if user.is_authenticated %} Hola {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <iframe
+      width="600"
+      height="500"
+      frameborder="0"
+      src="https://docs.google.com/spreadsheets/d/1edhxpFWmXy8ojD094FOVFr1u7Q0eM_9mUQln0S-ozAs/edit?usp=sharing&amp;single=true&amp;widget=true&amp;headers=false"
+    ></iframe>
+    {% else %}
+    <p>Loggeate</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+  </body>
+</html>
